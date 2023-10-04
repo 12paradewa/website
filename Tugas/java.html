@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas JavaScript</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="java.css">
+</head>
+<body>
+    <div class="kotak">
+        <header class="container">
+            <h1>Tugas JavaScript</h1>
+            <nav>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="index.html">Beranda</a></li>/
+                    <li class="list-inline-item"><a href="list Tugas.html">Tugas</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="container mt-5">
+            <form id="formBiodata" class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="nama">Nama:</label>
+                        <input type="text" class="form-control" id="nama" name="nama" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nim">NIM:</label>
+                        <input type="number" class="form-control" id="nim" name="nim" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="alamat">Alamat:</label>
+                        <textarea class="form-control" id="alamat" name="alamat" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="tanggalLahir">Tanggal Lahir:</label>
+                        <input type="text" class="form-control" id="tanggalLahir" name="tanggalLahir" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="jeniskelamin">Jenis Kelamin:</label>
+                        <select class="form-control" id="jeniskelamin" name="jeniskelamin" required>
+                            <option value="laki">Laki-laki</option>
+                            <option value="perempuan">Perempuan</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="programStudi">Program Studi:</label>
+                        <input type="text" class="form-control" id="programStudi" name="programStudi" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="semester">Semester:</label>
+                        <input type="number" class="form-control" id="semester" name="semester" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nomorTelepon">Nomor Telepon:</label>
+                        <input type="number" class="form-control" id="nomorTelepon" name="nomorTelepon" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="hobi">Hobi (Pilih satu atau lebih):</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="hobi1" name="hobi[]" value="olahraga">
+                            <label class="form-check-label" for="hobi1">Olahraga</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="hobi2" name="hobi[]" value="musik">
+                            <label class="form-check-label" for="hobi2">Musik</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="hobi3" name="hobi[]" value="membaca">
+                            <label class="form-check-label" for="hobi3">Membaca</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="hobbyLain">Hobby Lain:</label>
+                        <input type="text" class="form-control" id="hobbyLain" name="hobbyLain" required>
+                    </div>
+                </div>
+                <div class="col-md-12 text-right"> 
+                    <button type="submit" class="btn btn-primary">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById("formBiodata").addEventListener("submit", function (e) {
+            e.preventDefault();
+            var nama = document.getElementById("nama").value;
+            var nim = document.getElementById("nim").value;
+            var alamat = document.getElementById("alamat").value;
+            var tanggalLahir = document.getElementById("tanggalLahir").value;
+            var jenisKelamin = document.getElementById("jeniskelamin").value;
+            var programStudi = document.getElementById("programStudi").value;
+            var semester = document.getElementById("semester").value;
+            var nomorTelepon = document.getElementById("nomorTelepon").value;
+            var hobi = document.querySelectorAll('input[name="hobi[]"]:checked').length;
+
+            if (!nama || !nim || !alamat || !tanggalLahir || !jenisKelamin || !programStudi || !semester || !nomorTelepon || hobi === 0) {
+                alert("Semua kolom harus diisi dan minimal satu hobi dipilih!");
+            } else {
+                alert("Data berhasil dikirim!");
+                this.reset(); 
+            }
+        });
+    </script>
+</body>
+</html>

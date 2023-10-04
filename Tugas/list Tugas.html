@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Tugas</title>
+    <!-- Tambahkan link CSS Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="listTugas.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <h2>Daftar Tugas</h2>
+        <nav>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="index.html">Beranda</a></li>/
+                <li class="list-inline-item"><a href="java.html">Tugas JavaScript</a></li>
+            </ul>
+        </nav>
+        <div class="list-group">
+            <!-- Tugas 1 -->
+            <div class="list-group-item list-group-item-action">
+                <a data-toggle="collapse" href="#collapseTugas1" role="button" aria-expanded="false" aria-controls="collapseTugas1">
+                    Tugas 1
+                </a>
+                <div class="collapse" id="collapseTugas1">
+                    <div class="mt-2">
+                        <div id="statusTugas1">Tugas belum dikumpulkan.</div>
+                        <form>
+                            <div class="form-group">
+                                <label for="fileTugas1">Unggah Tugas</label>
+                                <input type="file" class="form-control-file" id="fileTugas1">
+                            </div>
+                            <button type="submit" class="btn btn-primary" onclick="uploadTugas('Tugas 1')">Unggah</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tugas 2 -->
+            <div class="list-group-item list-group-item-action">
+                <a data-toggle="collapse" href="#collapseTugas2" role="button" aria-expanded="false" aria-controls="collapseTugas2">
+                    Tugas 2
+                </a>
+                <div class="collapse" id="collapseTugas2">
+                    <div class="mt-2">
+                        <div id="statusTugas2">Tugas belum dikumpulkan.</div>
+                        <form>
+                            <div class="form-group">
+                                <label for="fileTugas2">Unggah Tugas</label>
+                                <input type="file" class="form-control-file" id="fileTugas2">
+                            </div>
+                            <button type="submit" class="btn btn-primary" onclick="uploadTugas('Tugas 2')">Unggah</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tugas 3 -->
+            <div class="list-group-item list-group-item-action">
+                <a data-toggle="collapse" href="#collapseTugas3" role="button" aria-expanded="false" aria-controls="collapseTugas3">
+                    Tugas 3
+                </a>
+                <div class="collapse" id="collapseTugas3">
+                    <div class="mt-2">
+                        <div id="statusTugas3">Tugas belum dikumpulkan.</div>
+                        <form>
+                            <div class="form-group">
+                                <label for="fileTugas3">Unggah Tugas</label>
+                                <input type="file" class="form-control-file" id="fileTugas3">
+                            </div>
+                            <button type="submit" class="btn btn-primary" onclick="uploadTugas('Tugas 3')">Unggah</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tambahkan script Bootstrap dan jQuery (diperlukan untuk dropdown) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        function uploadTugas(tugasId) {
+            const fileInputId = `fileTugas${tugasId.slice(-1)}`;
+            const fileInput = document.getElementById(fileInputId);
+            const statusDiv = document.getElementById(`status${tugasId.slice(-1)}`);
+
+            if (fileInput.files.length > 0) {
+                const date = new Date();
+                const formattedDate = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+                statusDiv.innerHTML = `Tugas ${tugasId} telah dikumpulkan pada ${formattedDate}.`;
+                alert(`Tugas ${tugasId} telah diunggah: ${fileInput.files[0].name}`);
+            } else {
+                statusDiv.innerHTML = `Tugas ${tugasId} belum dikumpulkan.`;
+                alert(`Tugas ${tugasId} belum diunggah.`);
+            }
+        }
+    </script>
+</body>
+</html>

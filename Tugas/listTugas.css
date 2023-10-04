@@ -1,0 +1,75 @@
+body {
+    background-color: #ffffff;
+}
+
+h2 {
+    color: #ffffff;
+    font-family: serif;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.list-group-item {
+    border: none;
+    background-color: #ffffff;
+    margin-bottom: 10px;
+    font-family: serif
+}
+
+/* Gaya untuk tautan tugas */
+.list-group-item a {
+    text-decoration: none;
+    color: #ff9d00;
+    font-weight: bold;
+}
+
+
+
+/* Gaya untuk tombol Unggah Tugas */
+.form-group {
+    margin-bottom: 10px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+/* Gaya untuk pesan alert */
+.alert {
+    margin-top: 10px;
+}
+
+/* Atur agar daftar tugas menjadi satu kolom */
+.list-group-item {
+    display: block;
+}
+
+.container{
+    background-color: #5c1111; /* Warna latar belakang kontainer */
+    padding: 20px; /* Ruang dalam kontainer */
+    border-radius: 10px; /* Sudut bulat untuk kontainer */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Bayangan kontainer */
+    max-width: 50%;
+    max-height: 50%;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+nav a:hover {
+    color: #007bff;
+}
